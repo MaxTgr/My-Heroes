@@ -2,7 +2,7 @@
     <string name="app_name">DHProject</string>
     <string name="title_activity_main">MainActivity</string>
 
-    <string name="error">We are working on to fix this right now!</string>
+    <string name="error">We are working on a fix to this right now!</string>
 
     <string name="title_search">Search</string>
     <!--Busca-->
