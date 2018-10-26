@@ -24,22 +24,27 @@ public class MainActivity extends AppCompatActivity {
             switch (item.getItemId()) {
                 case R.id.navigation_search:
                     fragment = new BlankFragment(); // TODO: implement search activity
+                    setTitle(R.string.title_search);
                     break;
 
                 case R.id.navigation_messages:
                     fragment = new BlankFragment(); // TODO: implement messages activity
+                    setTitle(R.string.title_messages);
                     break;
 
                 case R.id.navigation_heroes:
                     fragment = new HeroFragment();
+                    setTitle(R.string.title_heroes);
                     break;
 
                 case R.id.navigation_reservations:
                     fragment = new BlankFragment(); // TODO: implement reservation activity
+                    setTitle(R.string.title_reservations);
                     break;
 
                 case R.id.navigation_profile:
                     fragment = new BlankFragment(); // TODO: implement profile activity
+                    setTitle(R.string.title_profile);
                     break;
             }
             return load(fragment);

@@ -2,6 +2,8 @@
     <string name="app_name">DHProject</string>
     <string name="title_activity_main">MainActivity</string>
 
+    <!--TODO: translate strings-->
+
     <string name="error">We are working on a fix to this right now!</string>
 
     <string name="title_search">Search</string>
@@ -15,5 +17,10 @@
     <string name="title_profile">Profile</string>
     <!--Perfil-->
 
+    <!--Heroes Fragment-->
+    <string name="heroes_hosted_with">Heroes I\'ve hosted with</string>
+    <!--Heróis com quem hospedei-->
+    <string name="heroes_favorites">Favorite heroes</string>
+    <!--Heróis favoritos-->
 
 </resources>

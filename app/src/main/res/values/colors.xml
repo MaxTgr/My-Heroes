@@ -3,5 +3,9 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
     <color name="colorRed">#EF3A5D</color>
+
+    <color name="colorBlackSub">#6B000000</color> <!--RGBA(0, 0, 0, 0.42)-->
+    <color name="colorBlackMain">#A8000000</color> <!--RGBA(0, 0, 0, 0.66)-->
 </resources>
