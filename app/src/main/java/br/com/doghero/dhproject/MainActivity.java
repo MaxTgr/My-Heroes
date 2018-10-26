@@ -6,9 +6,8 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
-import android.widget.TextView;
 
-import br.com.doghero.dhproject.fragments.HeroFragment;
+import br.com.doghero.dhproject.fragments.hero.HeroFragment;
 import br.com.doghero.dhproject.fragments.blank.BlankFragment;
 
 public class MainActivity extends AppCompatActivity {

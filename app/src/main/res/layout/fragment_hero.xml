@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".fragments.HeroFragment">
+    tools:context=".fragments.hero.HeroFragment">
 
     <TextView
         android:layout_margin="16dp"
@@ -16,6 +16,7 @@
         android:textColor="@color/colorBlackSub"/>
 
     <android.support.v7.widget.RecyclerView
+        android:id="@+id/recent_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
@@ -29,6 +30,7 @@
         android:textColor="@color/colorBlackSub"/>
 
     <android.support.v7.widget.RecyclerView
+        android:id="@+id/favorite_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
