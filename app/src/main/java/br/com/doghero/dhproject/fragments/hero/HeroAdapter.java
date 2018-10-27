@@ -58,6 +58,8 @@ public class HeroAdapter extends RecyclerView.Adapter<HeroAdapter.ViewHolder> {
         String heroPrice = Integer.toString(hero.getPrice());
         holder.price.setText(heroPrice);
 
+        // TODO: ask - favorite button should not appear on recent?
+
         // TODO: change placeholder img
         ImageHelper.loadImage(ctx, hero.getImageUrl(), R.mipmap.ic_launcher, holder.photo);
         // TODO: implement superhero icon
