@@ -36,9 +36,16 @@ public class HeroFragment extends Fragment {
         mRecentRecyclerView = heroLayout.findViewById(R.id.recent_list);
         mFavoriteRecyclerView = heroLayout.findViewById(R.id.favorite_list);
 
-        mLayoutManager = new LinearLayoutManager(getActivity().getApplicationContext());
-        mRecentRecyclerView.setLayoutManager(mLayoutManager);
-        mFavoriteRecyclerView.setLayoutManager(mLayoutManager);
+        mRecentRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        mFavoriteRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+
+        String apiResponse = ApiAnswer.getMyHeroes();
+        HashMap<String, List<Hero>> heroes = MyHeroes.build(apiResponse);
+
+        mRecentAdapter = new HeroAdapter(heroes.get("recents"));
+        mFavoriteAdapter = new HeroAdapter(heroes.get("favorites"));
+        mRecentRecyclerView.setAdapter(mRecentAdapter);
+        mFavoriteRecyclerView.setAdapter(mFavoriteAdapter);
 
         // Inflate the layout for this fragment
         return heroLayout;
@@ -47,9 +54,6 @@ public class HeroFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        String apiResponse = ApiAnswer.getMyHeroes();
-        HashMap<String, List<Hero>> heroes = MyHeroes.build(apiResponse);
     }
 
 }

@@ -22,5 +22,13 @@
     <!--Heróis com quem hospedei-->
     <string name="heroes_favorites">Favorite heroes</string>
     <!--Heróis favoritos-->
+    <string name="hero_price_currency">R$</string>
+    <string name="hero_price_time">Per night</string>
+
+    <!--Placeholders-->
+    <string name="holder_hero_name">Nicholas</string>
+    <string name="holder_hero_neighborhood">Alto da Mooca</string>
+    <string name="holder_hero_ratings">(999)</string>
+    <string name="holder_hero_price">999</string>
 
 </resources>
