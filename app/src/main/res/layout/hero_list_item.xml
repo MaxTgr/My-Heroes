@@ -12,13 +12,13 @@
         android:layout_height="wrap_content">
 
         <!--TODO: change placeholder img-->
-
+        <!--TODO: circle img-->
         <ImageView
             android:id="@+id/hero_photo"
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:src="@mipmap/ic_launcher" />
-
+        <!--TODO: superhero icon-->
         <ImageView
             android:id="@+id/hero_is_superhero"
             android:layout_width="24dp"
@@ -54,6 +54,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <!--TODO: ask what should go here-->
         <RatingBar
             android:id="@+id/ratingBar"
             style="?android:attr/ratingBarStyleSmall"
