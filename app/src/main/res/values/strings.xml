@@ -22,8 +22,14 @@
     <!--Heróis com quem hospedei-->
     <string name="heroes_favorites">Favorite heroes</string>
     <!--Heróis favoritos-->
-    <string name="hero_price_currency">R$</string>
     <string name="hero_price_time">Per night</string>
+    <!--Por noite-->
+    <string name="hero_price_currency">$</string>
+    <!--R$-->
+    <string name="btn_book">Book again</string>
+    <!--Reservar de novo-->
+    <string name="btn_chat">Chat</string>
+    <!--Conversar-->
 
     <!--Placeholders-->
     <string name="holder_hero_name">Nicholas</string>

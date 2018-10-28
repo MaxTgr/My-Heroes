@@ -88,6 +88,7 @@ public class HeroAdapter extends RecyclerView.Adapter<HeroAdapter.ViewHolder> {
                 }
                 Log.e("holder", holder.btnFavorite.getTag().toString());
                 holder.btnFavorite.setImageResource(drawable);
+                holder.btnFavorite.setTag(tag);
             }
         });
     }
