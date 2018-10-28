@@ -1,10 +1,13 @@
 <resources>
-    <string name="app_name">DHProject</string>
-    <string name="title_activity_main">MainActivity</string>
+    <string name="app_name" translatable="false">My Heroes</string>
+    <string name="title_activity_main" translatable="false">Dog Hero</string>
 
     <!--TODO: translate strings-->
 
     <string name="error">We are working on a fix to this right now!</string>
+    <!--Estamos trabalhando em uma correção para isso agora!-->
+    <string name="toast">We can\'t do that now, please try again later</string>
+    <!--Não podemos fazer isso agora, por favor, tente novamente mais tarde-->
 
     <string name="title_search">Search</string>
     <!--Busca-->
@@ -32,9 +35,9 @@
     <!--Conversar-->
 
     <!--Placeholders-->
-    <string name="holder_hero_name">Nicholas</string>
-    <string name="holder_hero_neighborhood">Alto da Mooca</string>
-    <string name="holder_hero_ratings">(999)</string>
-    <string name="holder_hero_price">999</string>
+    <string name="holder_hero_name" translatable="false">Nicholas</string>
+    <string name="holder_hero_neighborhood" translatable="false">Alto da Mooca</string>
+    <string name="holder_hero_ratings" translatable="false">(999)</string>
+    <string name="holder_hero_price" translatable="false">999</string>
 
 </resources>

@@ -11,12 +11,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
-        <!--TODO: change placeholder img-->
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/hero_photo"
             android:layout_width="64dp"
             android:layout_height="64dp"
-            android:src="@mipmap/ic_launcher" />
+            android:src="@drawable/icon_hero" />
 
         <ImageView
             android:id="@+id/hero_is_superhero"
@@ -74,12 +73,11 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toRightOf="@id/ratingBar" />
 
-        <!--TODO: implement favorite button behavior-->
         <ImageButton
+            android:background="?attr/selectableItemBackgroundBorderless"
             android:id="@+id/favorite_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
             android:contentDescription="@string/heroes_favorites"
             android:tag="false"
             app:layout_constraintRight_toRightOf="parent"
@@ -91,9 +89,8 @@
             android:text="@string/hero_price_currency"
             android:textColor="@color/colorBlackMain"
             android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintRight_toLeftOf="@id/hero_price"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintBottom_toTopOf="@id/hero_price_time"
+            app:layout_constraintRight_toLeftOf="@id/hero_price" />
 
         <TextView
             android:id="@+id/hero_price"
@@ -103,11 +100,11 @@
             android:textColor="@color/colorBlackMain"
             android:textSize="16sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintBottom_toTopOf="@id/hero_price_time"
+            app:layout_constraintRight_toRightOf="parent" />
 
         <TextView
+            android:id="@+id/hero_price_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/hero_price_time"
@@ -118,7 +115,6 @@
 
     </android.support.constraint.ConstraintLayout>
 
-    <!--TODO: Add Buttons-->
     <LinearLayout
         android:layout_marginTop="16dp"
         android:layout_width="match_parent"
@@ -139,6 +135,7 @@
             android:layout_height="40dp" />
 
         <Button
+            android:textColor="@color/colorWhite"
             android:textStyle="bold"
             android:textSize="14sp"
             android:textAllCaps="false"

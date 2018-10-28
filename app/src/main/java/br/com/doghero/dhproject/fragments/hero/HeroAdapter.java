@@ -2,7 +2,6 @@ package br.com.doghero.dhproject.fragments.hero;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,17 +20,17 @@ public class HeroAdapter extends RecyclerView.Adapter<HeroAdapter.ViewHolder> {
     private List<Hero> mHeroes;
     private Context ctx;
 
-    public HeroAdapter(List<Hero> heroes) {
+    private HeroAdapter(List<Hero> heroes) {
         mHeroes = heroes;
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
-        public TextView name, price, neighborhood;
-        public ImageView photo, superhero;
-        public ImageButton btnFavorite;
+        private TextView name, price, neighborhood;
+        private ImageView photo, superhero;
+        private ImageButton btnFavorite;
 
-        public ViewHolder(View view) {
+        private ViewHolder(View view) {
             super(view);
             name = view.findViewById(R.id.hero_name);
             price = view.findViewById(R.id.hero_price);
@@ -64,11 +63,10 @@ public class HeroAdapter extends RecyclerView.Adapter<HeroAdapter.ViewHolder> {
         holder.price.setText(heroPrice);
 
         // TODO: ask - favorite button should not appear on recent?
-        // TODO: change placeholder img
         // Image loading
-        ImageHelper.loadImage(ctx, hero.getImageUrl(), R.mipmap.ic_launcher, holder.photo);
+        ImageHelper.loadImage(ctx, hero.getImageUrl(), R.drawable.icon_hero, holder.photo);
         // show or hide superhero icon
-        int superheroCheck = hero.getIsSuperHero()? View.VISIBLE : View.GONE;
+        int superheroCheck = hero.getIsSuperHero() ? View.VISIBLE : View.GONE;
         holder.superhero.setVisibility(superheroCheck);
 
         // OnClickHandlers
@@ -78,15 +76,13 @@ public class HeroAdapter extends RecyclerView.Adapter<HeroAdapter.ViewHolder> {
                 int drawable;
                 String tag = (String) holder.btnFavorite.getTag();
 
-                // TODO: finish tag toggle
-                if(tag.equals("true")){
+                if (tag.equals("true")) {
                     drawable = R.drawable.icon_like_border_vector_gray_battleship;
                     tag = "false";
-                }else{
+                } else {
                     drawable = R.drawable.icon_like_filled_vector_red;
                     tag = "true";
                 }
-                Log.e("holder", holder.btnFavorite.getTag().toString());
                 holder.btnFavorite.setImageResource(drawable);
                 holder.btnFavorite.setTag(tag);
             }

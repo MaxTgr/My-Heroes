@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="error">Estamos trabalhando em uma correção para isso agora!</string>
+    <string name="toast">Não podemos fazer isso agora, por favor, tente novamente mais tarde</string>
+    <string name="title_search">Busca</string>
+    <string name="title_messages">Mensagens</string>
+    <string name="title_heroes">Heróis</string>
+    <string name="title_reservations">Reservas</string>
+    <string name="title_profile">Perfil</string>
+    <string name="heroes_hosted_with">Heróis com quem hospedei</string>
+    <string name="heroes_favorites">Heróis favoritos</string>
+    <string name="hero_price_time">Por noite</string>
+    <string name="hero_price_currency">R$</string>
+    <string name="btn_book">Reservar de novo</string>
+    <string name="btn_chat">Conversar</string>
+</resources>
