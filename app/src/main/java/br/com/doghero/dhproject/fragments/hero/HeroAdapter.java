@@ -15,22 +15,25 @@ import br.com.doghero.dhproject.R;
 import br.com.doghero.dhproject.images.ImageHelper;
 import br.com.doghero.dhproject.model.Hero;
 
-public class HeroAdapter extends RecyclerView.Adapter<HeroAdapter.ViewHolder> {
+public class HeroAdapter extends RecyclerView.Adapter<HeroAdapter.HeroViewHolder> {
 
     private List<Hero> mHeroes;
     private Context ctx;
 
-    private HeroAdapter(List<Hero> heroes) {
+    HeroAdapter(List<Hero> heroes) {
         mHeroes = heroes;
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    public static class HeroViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView name, price, neighborhood;
-        private ImageView photo, superhero;
+        private TextView name;
+        private TextView price;
+        private TextView neighborhood;
+        private ImageView photo;
+        private ImageView superhero;
         private ImageButton btnFavorite;
 
-        private ViewHolder(View view) {
+        private HeroViewHolder(View view) {
             super(view);
             name = view.findViewById(R.id.hero_name);
             price = view.findViewById(R.id.hero_price);
@@ -43,17 +46,17 @@ public class HeroAdapter extends RecyclerView.Adapter<HeroAdapter.ViewHolder> {
     }
 
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public HeroViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View card = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.hero_list_item, parent, false);
 
         ctx = card.getContext();
 
-        return new ViewHolder(card);
+        return new HeroViewHolder(card);
     }
 
     @Override
-    public void onBindViewHolder(final ViewHolder holder, int position) {
+    public void onBindViewHolder(final HeroViewHolder holder, int position) {
         Hero hero = mHeroes.get(position);
 
         // Setting text
