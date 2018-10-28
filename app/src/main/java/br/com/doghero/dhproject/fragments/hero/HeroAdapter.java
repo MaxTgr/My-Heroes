@@ -19,7 +19,6 @@ public class HeroAdapter extends RecyclerView.Adapter<HeroAdapter.ViewHolder> {
     private List<Hero> mHeroes;
     private Context ctx;
 
-    //TODO: add correct dataset
     public HeroAdapter(List<Hero> heroes) {
         mHeroes = heroes;
     }
@@ -59,10 +58,11 @@ public class HeroAdapter extends RecyclerView.Adapter<HeroAdapter.ViewHolder> {
         holder.price.setText(heroPrice);
 
         // TODO: ask - favorite button should not appear on recent?
-
         // TODO: change placeholder img
         ImageHelper.loadImage(ctx, hero.getImageUrl(), R.mipmap.ic_launcher, holder.photo);
-        // TODO: implement superhero icon
+        // show or hide superhero icon
+        int superheroCheck = hero.getIsSuperHero()? View.VISIBLE : View.GONE;
+        holder.superhero.setVisibility(superheroCheck);
     }
 
     @Override

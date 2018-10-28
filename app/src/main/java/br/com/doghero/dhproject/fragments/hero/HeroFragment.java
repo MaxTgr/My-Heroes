@@ -20,7 +20,6 @@ public class HeroFragment extends Fragment {
 
     private RecyclerView mRecentRecyclerView;
     private RecyclerView.Adapter mRecentAdapter;
-    private RecyclerView.LayoutManager mLayoutManager;
     private RecyclerView mFavoriteRecyclerView;
     private RecyclerView.Adapter mFavoriteAdapter;
 
@@ -36,9 +35,11 @@ public class HeroFragment extends Fragment {
         mRecentRecyclerView = heroLayout.findViewById(R.id.recent_list);
         mFavoriteRecyclerView = heroLayout.findViewById(R.id.favorite_list);
 
+        // setting both layout managers to this activity
         mRecentRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         mFavoriteRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
+        // getting the api response and sending to the adapters
         String apiResponse = ApiAnswer.getMyHeroes();
         HashMap<String, List<Hero>> heroes = MyHeroes.build(apiResponse);
 
