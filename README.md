@@ -31,3 +31,13 @@ app/src/main
 │     └── [Folders and classes for each Fragment, including the view class and any other class that belongs to it, like adapters]
 └──
 ```
+
+## Continuação de desenvolvimento:
+- Os fragments podem ser criados em qualquer linguagem, **devem** ter suas classes em uma pasta com o seu nome em br.com.doghero.dhproject.fragments
+Exemplo com um fragment de nome "Profile": 
+```
+java/br/com/doghero/dhproject/fragments
+└── profile
+│  └── ProfileFragment.java
+```
+- ApiAnswer: para implementar uma chamada de api real, é importante tomar cuidado com o tempo de resposta async, e o retorno da função getMyHeroes() deve ser uma string
