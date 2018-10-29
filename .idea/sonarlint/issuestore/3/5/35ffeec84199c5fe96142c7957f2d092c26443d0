@@ -1,0 +1,5 @@
+
+"squid:ClassVariableVisibilityCheck"VMake first_name a static final constant or non-public and provide accessors if needed.(Ù¬•œÿÿÿÿÿ8‰ìÏˆì,
+"squid:ClassVariableVisibilityCheck"UMake image_url a static final constant or non-public and provide accessors if needed.(€¸’ÿÿÿÿÿ8‰ìÏˆì,
+wsquid:S00116"URename this field "first_name" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ù¬•œÿÿÿÿÿ8‰ìÏˆì,
+vsquid:S00116"TRename this field "image_url" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(€¸’ÿÿÿÿÿ8‰ìÏˆì,
