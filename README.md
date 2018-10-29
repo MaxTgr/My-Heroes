@@ -5,7 +5,7 @@ Projeto enviado por [Dog Hero](https://www.doghero.com.br/)
 - Java : Java foi escolhido apenas pela disponibilidade de documentação, tanto de bibliotecas externas como algumas partes da documentação oficial, no entanto, kotlin pode ser substituído facilmente se for realmente necessário
 - Json parse : Foi utilizado o Gson, não só por estar disponível no projeto como por ser um dos parsers mais rápidos e escaláveis.
 - Estrutura : Foi escolhida a estrutura padrão dos guidelines do android, models, fragments, etc... (explicado abaixo)
-- Linguagem: A linguagem padrão do projeto é Ingles, seguindo os guidelines do android para nomeclatura, mas o sistema tem uma tradução para aparelhos com a linguagem principal em português do brasil.
+- Linguagem: A linguagem padrão do projeto é Inglês, seguindo os guidelines do android para nomeclatura, mas o sistema tem uma tradução para aparelhos com a linguagem principal em português do brasil.
 
 ## Estrutura deste projeto:
 ```
