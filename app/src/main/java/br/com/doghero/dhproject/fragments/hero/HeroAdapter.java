@@ -17,10 +17,10 @@ import br.com.doghero.dhproject.model.Hero;
 
 public class HeroAdapter extends RecyclerView.Adapter<HeroAdapter.HeroViewHolder> {
 
-    private List<Hero> mHeroes;
+    private Hero[] mHeroes;
     private Context ctx;
 
-    HeroAdapter(List<Hero> heroes) {
+    HeroAdapter(Hero[] heroes) {
         mHeroes = heroes;
     }
 
@@ -57,18 +57,18 @@ public class HeroAdapter extends RecyclerView.Adapter<HeroAdapter.HeroViewHolder
 
     @Override
     public void onBindViewHolder(final HeroViewHolder holder, int position) {
-        Hero hero = mHeroes.get(position);
+        Hero hero = mHeroes[position];
 
         // Setting text
-        holder.name.setText(hero.getFirstName());
-        holder.neighborhood.setText(hero.getAddressNeighborhood());
-        String heroPrice = Integer.toString(hero.getPrice());
+        holder.name.setText(hero.user.first_name);
+        holder.neighborhood.setText(hero.address_neighborhood);
+        String heroPrice = Integer.toString(hero.price);
         holder.price.setText(heroPrice);
 
         // Image loading
-        ImageHelper.loadImage(ctx, hero.getImageUrl(), R.drawable.icon_hero, holder.photo);
+        ImageHelper.loadImage(ctx, hero.user.image_url, R.drawable.icon_hero, holder.photo);
         // show or hide superhero icon
-        int superheroCheck = hero.getIsSuperHero() ? View.VISIBLE : View.GONE;
+        int superheroCheck = hero.is_superhero ? View.VISIBLE : View.GONE;
         holder.superhero.setVisibility(superheroCheck);
 
         // OnClickHandlers
@@ -93,6 +93,6 @@ public class HeroAdapter extends RecyclerView.Adapter<HeroAdapter.HeroViewHolder
 
     @Override
     public int getItemCount() {
-        return mHeroes.size();
+        return mHeroes.length;
     }
 }

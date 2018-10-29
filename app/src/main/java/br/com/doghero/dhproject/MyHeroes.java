@@ -1,14 +1,13 @@
 package br.com.doghero.dhproject;
 
-import android.util.Log;
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
+import java.util.Map;
 
 import br.com.doghero.dhproject.model.Hero;
 
@@ -17,50 +16,18 @@ public class MyHeroes {
     private MyHeroes() {
     }
 
-    public static HashMap<String, List<Hero>> build(String json) {
-        List<Hero> recentHeroes = new ArrayList<>();
-        List<Hero> favoriteHeroes = new ArrayList<>();
-        HashMap<String, List<Hero>> returning = new HashMap<>();
+    public static Map<String, Hero[]> build(String json) {
+        Map<String, Hero[]> full = new HashMap<>();
+        JsonElement rootElement = new JsonParser().parse(json);
+        JsonObject rootObject = rootElement.getAsJsonObject();
 
-        try {
-            JSONObject jsonObject = new JSONObject(json);
-            JSONArray recents = jsonObject.getJSONArray("recents");
-            JSONArray favorites = jsonObject.getJSONArray("favorites");
-            for (int i = 0; i < recents.length(); i++) {
-                recentHeroes.add(heroCreator(recents, i));
-            }
-            for (int i = 0; i < favorites.length(); i++) {
-                favoriteHeroes.add(heroCreator(favorites, i));
-            }
+        JsonArray recents = rootObject.get("recents").getAsJsonArray();
+        JsonArray favorites = rootObject.get("favorites").getAsJsonArray();
+        Hero[] recHeroes = new Gson().fromJson(recents, Hero[].class);
+        Hero[] favHeroes = new Gson().fromJson(favorites, Hero[].class);
 
-            returning.put("recents", recentHeroes);
-            returning.put("favorites", favoriteHeroes);
-        } catch (JSONException e) {
-            Log.e("Json", e.toString());
-        }
-
-        return returning;
-
+        full.put("recents", recHeroes);
+        full.put("favorites", favHeroes);
+        return full;
     }
-
-    private static Hero heroCreator(JSONArray array, int index) {
-        try {
-            JSONObject heroServices = array.getJSONObject(index);
-            JSONObject heroUser = heroServices.getJSONObject("user");
-
-            Boolean isSuperHero = heroServices.getBoolean("is_superhero");
-            String address = heroServices.getString("address_neighborhood");
-            int price = heroServices.getInt("price");
-
-            String name = heroUser.getString("first_name");
-            String photo = heroUser.getString("image_url");
-
-            return new Hero(isSuperHero, name, photo, address, price);
-        } catch (JSONException e) {
-            Log.e("Json", e.toString());
-        }
-
-        return null;
-    }
-
 }

@@ -8,8 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import java.util.HashMap;
-import java.util.List;
+import java.util.Map;
 
 import br.com.doghero.dhproject.MyHeroes;
 import br.com.doghero.dhproject.R;
@@ -36,8 +35,8 @@ public class HeroFragment extends Fragment {
 
         // getting the api response and sending to the adapters
         String apiResponse = ApiAnswer.getMyHeroes();
-        HashMap<String, List<Hero>> heroes = MyHeroes.build(apiResponse);
 
+        Map<String, Hero[]> heroes = MyHeroes.build(apiResponse);
         RecyclerView.Adapter mRecentAdapter = new HeroAdapter(heroes.get("recents"));
         RecyclerView.Adapter mFavoriteAdapter = new HeroAdapter(heroes.get("favorites"));
         mRecentRecyclerView.setAdapter(mRecentAdapter);
