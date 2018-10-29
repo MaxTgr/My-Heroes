@@ -18,11 +18,6 @@ import br.com.doghero.dhproject.model.Hero;
 
 public class HeroFragment extends Fragment {
 
-    private RecyclerView mRecentRecyclerView;
-    private RecyclerView.Adapter mRecentAdapter;
-    private RecyclerView mFavoriteRecyclerView;
-    private RecyclerView.Adapter mFavoriteAdapter;
-
     public HeroFragment() {
         // Required empty public constructor
     }
@@ -32,8 +27,8 @@ public class HeroFragment extends Fragment {
                              Bundle savedInstanceState) {
         View heroLayout = inflater.inflate(R.layout.fragment_hero, container, false);
 
-        mRecentRecyclerView = heroLayout.findViewById(R.id.recent_list);
-        mFavoriteRecyclerView = heroLayout.findViewById(R.id.favorite_list);
+        RecyclerView mRecentRecyclerView = heroLayout.findViewById(R.id.recent_list);
+        RecyclerView mFavoriteRecyclerView = heroLayout.findViewById(R.id.favorite_list);
 
         // setting both layout managers to this activity
         mRecentRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
@@ -43,8 +38,8 @@ public class HeroFragment extends Fragment {
         String apiResponse = ApiAnswer.getMyHeroes();
         HashMap<String, List<Hero>> heroes = MyHeroes.build(apiResponse);
 
-        mRecentAdapter = new HeroAdapter(heroes.get("recents"));
-        mFavoriteAdapter = new HeroAdapter(heroes.get("favorites"));
+        RecyclerView.Adapter mRecentAdapter = new HeroAdapter(heroes.get("recents"));
+        RecyclerView.Adapter mFavoriteAdapter = new HeroAdapter(heroes.get("favorites"));
         mRecentRecyclerView.setAdapter(mRecentAdapter);
         mFavoriteRecyclerView.setAdapter(mFavoriteAdapter);
 

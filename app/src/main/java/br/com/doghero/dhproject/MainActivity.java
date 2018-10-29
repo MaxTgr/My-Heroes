@@ -7,8 +7,8 @@ import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
-import br.com.doghero.dhproject.fragments.hero.HeroFragment;
 import br.com.doghero.dhproject.fragments.blank.BlankFragment;
+import br.com.doghero.dhproject.fragments.hero.HeroFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -44,6 +44,10 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.navigation_profile:
                     fragment = new BlankFragment(); // TODO: implement profile activity
                     setTitle(R.string.title_profile);
+                    break;
+                default:
+                    fragment = new BlankFragment();
+                    setTitle(R.string.app_name);
                     break;
             }
             return load(fragment);

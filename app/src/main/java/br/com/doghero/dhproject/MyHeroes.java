@@ -14,6 +14,9 @@ import br.com.doghero.dhproject.model.Hero;
 
 public class MyHeroes {
 
+    private MyHeroes() {
+    }
+
     public static HashMap<String, List<Hero>> build(String json) {
         List<Hero> recentHeroes = new ArrayList<>();
         List<Hero> favoriteHeroes = new ArrayList<>();

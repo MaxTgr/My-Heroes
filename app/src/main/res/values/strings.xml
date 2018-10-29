@@ -2,8 +2,6 @@
     <string name="app_name" translatable="false">My Heroes</string>
     <string name="title_activity_main" translatable="false">Dog Hero</string>
 
-    <!--TODO: translate strings-->
-
     <string name="error">We are working on a fix to this right now!</string>
     <!--Estamos trabalhando em uma correção para isso agora!-->
     <string name="toast">We can\'t do that now, please try again later</string>

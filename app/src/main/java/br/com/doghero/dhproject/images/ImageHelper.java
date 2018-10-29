@@ -6,6 +6,10 @@ import android.widget.ImageView;
 import com.squareup.picasso.Picasso;
 
 public class ImageHelper {
+
+    private ImageHelper() {
+    }
+
     public static void loadImage(Context context, final String imageUrl, int placeHolderResourceId, ImageView imageView) {
         Picasso.with(context)
                 .load(imageUrl)
